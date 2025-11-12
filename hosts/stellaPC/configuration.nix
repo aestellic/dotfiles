@@ -185,6 +185,7 @@
     loupe
     usbutils
     whitesur-cursors
+    inputs.noctalia.packages.${system}.default
   ];
 
   xdg.portal.enable = true;

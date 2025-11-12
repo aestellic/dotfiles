@@ -33,6 +33,9 @@
     #jack.enable = true;
   };
 
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -143,6 +146,7 @@
     loupe
     usbutils
     whitesur-cursors
+    inputs.noctalia.packages.${system}.default
   ];
 
   xdg.portal.enable = true;
