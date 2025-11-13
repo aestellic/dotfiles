@@ -34,7 +34,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.firefox
     pkgs.vesktop
     pkgs.signal-desktop-bin
     pkgs.localsend
