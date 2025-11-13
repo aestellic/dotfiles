@@ -51,9 +51,9 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/detach-tab/latest.xpi";
           installation_mode = "force_installed";
         };
-        # Firefox Color
-        "FirefoxColor@mozilla.com" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
+        # Catppuccin Mocha Green Theme
+        "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/catppuccin-mocha-green-git/latest.xpi";
           installation_mode = "force_installed";
         };
         # Sidebery
@@ -73,6 +73,7 @@
       Preferences = { 
         "extensions.pocket.enabled" = false;
         "browser.topsites.contile.enabled" = false;
+        "browser.aboutConfig.showWarning" = false;
         "browser.formfill.enable" = false;
         "browser.search.suggest.enabled" = false;
         "browser.search.suggest.enabled.private" = false;
@@ -102,13 +103,290 @@
           id = 0;               # 0 is the default profile; see also option "isDefault"
           name = "profile_0";   # name as listed in about:profiles
           isDefault = true;     # can be omitted; true if profile ID is 0
-          settings = {          # specify profile-specific preferences here; check about:config for options
-            # add preferences for profile_0 here...
-          };
+          path = "profile_0";
+          search.default = "ddg"
           userChrome = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userChrome.css";
           userContent = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userContent.css";
-          # NOTE: You have to manually import sidebery settings and Firefox Color settings
-          # https://color.firefox.com/?theme=XQAAAAJEBAAAAAAAAABBqYhm849SCicxcUcPX38oKRicm6da8pFtMcajvXaAE3RJ0F_F447xQs-L1kFlGgDKq4IIvWciiy4upusW7OvXIRinrLrwLvjXB37kvhN5ElayHo02fx3o8RrDShIhRpNiQMOdww5V2sCMLAfehhpNuTUzCCysnMav9-dMeCS-YdrUYNRq_65Vh7TlxjqqIEBwOL_OoPPzToHWKzukcQaRsZUnty3oxorbtIosU9WVXZVe5ImQLK4GyxY9IaGdk_4jpW4cVdaKPaDGD6P_nSqysKos2ATQ16qOOYp7ekq4tWW2fF74tUqB_0WbB4Q5I0qKeUW2NfJMOkcGyTetLVRsE1GPMMh0hw6mSEYxm9KxMQC1bS56dsWnK7ZGTJyiMYGRtcOxp2_1WnhezQVdo7WCmNNcB6UOu1usj9vfd5y5MtnkVbQO6y2NHx4V62RLNJkb1NhaehWE7sXRBy07YJp5WGrU2xg-Pzx5kwVEpf0P0uNggg9gGnBsZ1Z6M6A_C6y5OP8RpqKWGD3O58CLSYN9fZR1_p9Iffs1HyDT9XD_4Y0ysg
+          extensions.settings = {
+            "{3c078156-979c-498b-8990-85f7987dd929}".settings = {
+              settings = [
+                nativeScrollbars = true;
+                nativeScrollbarsThin = true;
+                nativeScrollbarsLeft = false;
+                selWinScreenshots = false;
+                updateSidebarTitle = true;
+                markWindow = true;
+                markWindowPreface = "​";
+                ctxMenuNative = false;
+                ctxMenuRenderInact = true;
+                ctxMenuRenderIcons = true;
+                ctxMenuIgnoreContainers = "";
+                navBarLayout = "horizontal";
+                navBarInline = true;
+                navBarSide = "left";
+                hideAddBtn = false;
+                hideSettingsBtn = false;
+                navBtnCount = true;
+                hideEmptyPanels = true;
+                hideDiscardedTabPanels = false;
+                navActTabsPanelLeftClickAction = "none";
+                navActBookmarksPanelLeftClickAction = "none";
+                navTabsPanelMidClickAction = "discard";
+                navBookmarksPanelMidClickAction = "none";
+                navSwitchPanelsWheel = true;
+                subPanelRecentlyClosedBar = true;
+                subPanelBookmarks = true;
+                subPanelHistory = true;
+                subPanelSync = false;
+                groupLayout = "grid";
+                containersSortByName = false;
+                skipEmptyPanels = false;
+                dndTabAct = true;
+                dndTabActDelay = 750;
+                dndTabActMod = "none";
+                dndExp = "pointer";
+                dndExpDelay = 750;
+                dndExpMod = "none";
+                dndOutside = "win";
+                dndActTabFromLink = true;
+                dndActSearchTab = true;
+                dndMoveTabs = false;
+                dndMoveBookmarks = false;
+                searchBarMode = "dynamic";
+                searchPanelSwitch = "same_type";
+                searchBookmarksShortcut = "";
+                searchHistoryShortcut = "";
+                warnOnMultiTabClose = "collapsed";
+                activateLastTabOnPanelSwitching = true;
+                activateLastTabOnPanelSwitchingLoadedOnly = true;
+                switchPanelAfterSwitchingTab = "always";
+                tabRmBtn = "hover";
+                activateAfterClosing = "next";
+                activateAfterClosingStayInPanel = false;
+                activateAfterClosingGlobal = false;
+                activateAfterClosingNoFolded = true;
+                activateAfterClosingNoDiscarded = true;
+                askNewBookmarkPlace = true;
+                tabsRmUndoNote = true;
+                tabsUnreadMark = false;
+                tabsUpdateMark = "all";
+                tabsUpdateMarkFirst = true;
+                tabsReloadLimit = 5;
+                tabsReloadLimitNotif = true;
+                showNewTabBtns = true;
+                newTabBarPosition = "after_tabs";
+                tabsPanelSwitchActMove = false;
+                tabsPanelSwitchActMoveAuto = true;
+                tabsUrlInTooltip = "full";
+                newTabCtxReopen = false;
+                tabWarmupOnHover = true;
+                tabSwitchDelay = 0;
+                forceDiscard = true;
+                moveNewTabPin = "start";
+                moveNewTabParent = "last_child";
+                moveNewTabParentActPanel = false;
+                moveNewTab = "end";
+                moveNewTabActivePin = "start";
+                pinnedTabsPosition = "panel";
+                pinnedTabsList = false;
+                pinnedAutoGroup = false;
+                pinnedNoUnload = false;
+                pinnedForcedDiscard = false;
+                tabsTree = true;
+                groupOnOpen = true;
+                tabsTreeLimit = "none";
+                autoFoldTabs = false;
+                autoFoldTabsExcept = "none";
+                autoExpandTabs = false;
+                autoExpandTabsOnNew = false;
+                rmChildTabs = "folded";
+                tabsLvlDots = true;
+                discardFolded = false;
+                discardFoldedDelay = 0;
+                discardFoldedDelayUnit = "sec";
+                tabsTreeBookmarks = true;
+                treeRmOutdent = "branch";
+                autoGroupOnClose = false;
+                autoGroupOnClose0Lvl = false;
+                autoGroupOnCloseMouseOnly = false;
+                ignoreFoldedParent = false;
+                showNewGroupConf = true;
+                sortGroupsFirst = true;
+                colorizeTabs = false;
+                colorizeTabsSrc = "domain";
+                colorizeTabsBranches = false;
+                colorizeTabsBranchesSrc = "url";
+                inheritCustomColor = true;
+                previewTabs = false;
+                previewTabsMode = "i";
+                previewTabsPageModeFallback = "w";
+                previewTabsInlineHeight = 70;
+                previewTabsPopupWidth = 280;
+                previewTabsTitle = 2;
+                previewTabsUrl = 1;
+                previewTabsSide = "right";
+                previewTabsDelay = 500;
+                previewTabsFollowMouse = true;
+                previewTabsWinOffsetY = 36;
+                previewTabsWinOffsetX = 6;
+                previewTabsInPageOffsetY = 0;
+                previewTabsInPageOffsetX = 0;
+                previewTabsCropRight = 0;
+                hideInact = false;
+                hideFoldedTabs = false;
+                hideFoldedParent = "none";
+                nativeHighlight = true;
+                warnOnMultiBookmarkDelete = "collapsed";
+                autoCloseBookmarks = false;
+                autoRemoveOther = false;
+                highlightOpenBookmarks = false;
+                activateOpenBookmarkTab = false;
+                showBookmarkLen = true;
+                bookmarksRmUndoNote = true;
+                loadBookmarksOnDemand = true;
+                pinOpenedBookmarksFolder = true;
+                oldBookmarksAfterSave = "ask";
+                loadHistoryOnDemand = true;
+                fontSize = "m";
+                animations = true;
+                animationSpeed = "norm";
+                theme = "proton";
+                density = "default";
+                colorScheme = "ff";
+                snapNotify = true;
+                snapExcludePrivate = false;
+                snapInterval = 0;
+                snapIntervalUnit = "min";
+                snapLimit = 0;
+                snapLimitUnit = "snap";
+                snapAutoExport = false;
+                snapAutoExportType = "json";
+                snapAutoExportPath = "Sidebery/snapshot-%Y.%M.%D-%h.%m.%s";
+                snapMdFullTree = false;
+                hScrollAction = "none";
+                onePanelSwitchPerScroll = false;
+                wheelAccumulationX = true;
+                wheelAccumulationY = true;
+                navSwitchPanelsDelay = 128;
+                scrollThroughTabs = "none";
+                scrollThroughVisibleTabs = true;
+                scrollThroughTabsSkipDiscarded = true;
+                scrollThroughTabsExceptOverflow = true;
+                scrollThroughTabsCyclic = false;
+                scrollThroughTabsScrollArea = 0;
+                autoMenuMultiSel = true;
+                multipleMiddleClose = false;
+                longClickDelay = 500;
+                wheelThreshold = false;
+                wheelThresholdX = 10;
+                wheelThresholdY = 60;
+                tabDoubleClick = "none";
+                tabsSecondClickActPrev = true;
+                tabsSecondClickActPrevPanelOnly = false;
+                tabsSecondClickActPrevNoUnload = false;
+                shiftSelAct = true;
+                activateOnMouseUp = false;
+                tabLongLeftClick = "none";
+                tabLongRightClick = "none";
+                tabMiddleClick = "close";
+                tabPinnedMiddleClick = "discard";
+                tabMiddleClickCtrl = "discard";
+                tabMiddleClickShift = "duplicate";
+                tabCloseMiddleClick = "close";
+                tabsPanelLeftClickAction = "none";
+                tabsPanelDoubleClickAction = "tab";
+                tabsPanelRightClickAction = "menu";
+                tabsPanelMiddleClickAction = "tab";
+                newTabMiddleClickAction = "new_child";
+                bookmarksLeftClickAction = "open_in_act";
+                bookmarksLeftClickActivate = false;
+                bookmarksLeftClickPos = "default";
+                bookmarksMidClickAction = "open_in_new";
+                bookmarksMidClickActivate = false;
+                bookmarksMidClickRemove = false;
+                bookmarksMidClickPos = "default";
+                historyLeftClickAction = "open_in_act";
+                historyLeftClickActivate = false;
+                historyLeftClickPos = "default";
+                historyMidClickAction = "open_in_new";
+                historyMidClickActivate = false;
+                historyMidClickPos = "default";
+                syncName = "";
+                syncUseFirefox = true;
+                syncUseGoogleDrive = false;
+                syncUseGoogleDriveApi = false;
+                syncUseGoogleDriveApiClientId = "";
+                syncSaveSettings = false;
+                syncSaveCtxMenu = false;
+                syncSaveStyles = false;
+                syncSaveKeybindings = false;
+                selectActiveTabFirst = true;
+                selectCyclic = false;
+              ];
+
+              sidebar = {
+                nav = ["9iD_gaHrxpAp" "4ZrFYm0fG7Ah" "add_tp" "sp-0" "settings"];
+                panels = {
+                  "4ZrFYm0fG7Ah" = {
+                    type = 2;
+                    id = "4ZrFYm0fG7Ah";
+                    name = "Tabs";
+                    color = "toolbar";
+                    iconSVG = "icon_tabs";
+                    iconIMGSrc = "";
+                    iconIMG = "";
+                    lockedPanel = false;
+                    skipOnSwitching = false;
+                    noEmpty = false;
+                    newTabCtx = "none";
+                    dropTabCtx = "none";
+                    moveRules = [];
+                    moveExcludedTo = -1;
+                    bookmarksFolderId = -1;
+                    newTabBtns = [];
+                    srcPanelConfig = null;
+                  };
+                  "9iD_gaHrxpAp" = {
+                    type = 2;
+                    id = "9iD_gaHrxpAp";
+                    name = "Tabs";
+                    color = "toolbar";
+                    iconSVG = "icon_tabs";
+                    iconIMGSrc = "";
+                    iconIMG = "";
+                    lockedPanel = false;
+                    skipOnSwitching = false;
+                    noEmpty = false;
+                    newTabCtx = "none";
+                    dropTabCtx = "none";
+                    moveRules = [];
+                    moveExcludedTo = -1;
+                    bookmarksFolderId = -1;
+                    newTabBtns = [];
+                    srcPanelConfig = null;
+                  };
+                };
+              };
+
+              sidebarCSS = [
+                "#root.root {--general-margin, 6px;}"
+                "#root.root {--general-border-radius, 8px;}"
+                "#nav_bar {\tpadding, 12px !important;}"
+                "#root.root {--toolbar-bg, transparent;}"
+                ".Tab .body, .NavigationBar .nav-item, .Sidebar .tool-btn, .TabsPanel .new-tab-btn, .CtxMenu .opt, .icon-opt { transition, background 0.075s linear, opacity 0.075s linear; }"
+                ".hidden-panels-popup-layer > * { background, var(--s-frame-bg) !important; }"
+                "#root:not(hover) .top-horizontal-box, #root:not(hover) .BottomBar { opacity, 0; transition, all 0s; }"
+                "#root .top-horizontal-box, #root .BottomBar { transition, opacity 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important; }"
+                "#root:not(hover) .scroll-container { overflow, hidden; }"
+                "#root:not(hover) .scroll-container > * { width, fit-content; }"
+                "#root:not(hover) .Tab { padding-left, 0 !important; }"
+                "#root:not(hover) .Tab > .body > *:not(.fav) { display, none !important; }"
+                "#root:not(hover) .new-tab-btns svg { opacity, 0 !important; transition, opacity 0.25s cubic-bezier(0.075, 0.82, 0.165, 1); }"
+                "#root:not(hover) .new-tab-btns { transition, all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1); }"
+                "#root:not(hover) .top-shadow, #root:not(hover) .bottom-shadow, #root:not(hover) .scroll-container .new-tab-btns:before { display, none; }"
+              ];
+            };
+          };
         };
       };
     };
