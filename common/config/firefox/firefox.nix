@@ -104,7 +104,7 @@
           name = "profile_0";   # name as listed in about:profiles
           isDefault = true;     # can be omitted; true if profile ID is 0
           path = "profile_0";
-          search.default = "ddg"
+          search.default = "ddg";
           userChrome = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userChrome.css";
           userContent = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userContent.css";
           extensions.settings = {
