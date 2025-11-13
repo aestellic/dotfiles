@@ -40,6 +40,7 @@
 
           # Modules
           ./hosts/stellaPC/configuration.nix
+          ./common/noctalia.nix
           inputs.home-manager.nixosModules.default
         ];
       };
@@ -58,6 +59,7 @@
 
           # Modules
           ./hosts/stellaLaptop/configuration.nix
+          ./common/noctalia.nix
           inputs.home-manager.nixosModules.default
         ];
       };

@@ -1,11 +1,10 @@
-{ pkgs; inputs; ... }:
+{ pkgs, inputs, ... }:
 {
   home-manager.users.sdasappan = {
     # import the home manager module
     imports = [
       inputs.noctalia.homeModules.default
     ];
-  }
 
   programs.noctalia-shell = {
     settings = {
@@ -102,13 +101,13 @@
                   usePrimaryColor = true;
               }
               {
-                  customIconPath" = "";
-                  icon" = "noctalia";
-                  id" = "ControlCenter";
+                  customIconPath = "";
+                  icon = "noctalia";
+                  id = "ControlCenter";
                   useDistroLogo = false;
               }
-            ]
-          }
+            ];
+          };
         };
         battery = {
           chargingMode = 0;
@@ -180,8 +179,8 @@
               {
                 id = "NightLight";
               }
-            ]
-          }
+            ];
+          };
         };
         dock = {
           enabled = false;
@@ -306,24 +305,24 @@
           transitionDuration = 1500;
           transitionEdgeSmoothness = 0.05;
           transitionType = "random";
-        }
+        };
       };
-    };
-    colors = {
-      mError = "#f38ba8";
-      mOnError = "#11111b";
-      mOnPrimary = "#11111b";
-      mOnSecondary = "#11111b";
-      mOnSurface = "#cdd6f4";
-      mOnSurfaceVariant = "#a3b4eb";
-      mOnTertiary = "#11111b";
-      mOutline = "#4c4f69";
-      mPrimary = "#cba6f7";
-      mSecondary = "#fab387";
-      mShadow = "#11111b";
-      mSurface = "#1e1e2e";
-      mSurfaceVariant = "#313244";
-      mTertiary = "#94e2d5";
+      colors = {
+        mError = "#f38ba8";
+        mOnError = "#11111b";
+        mOnPrimary = "#11111b";
+        mOnSecondary = "#11111b";
+        mOnSurface = "#cdd6f4";
+        mOnSurfaceVariant = "#a3b4eb";
+        mOnTertiary = "#11111b";
+        mOutline = "#4c4f69";
+        mPrimary = "#cba6f7";
+        mSecondary = "#fab387";
+        mShadow = "#11111b";
+        mSurface = "#1e1e2e";
+        mSurfaceVariant = "#313244";
+        mTertiary = "#94e2d5";
+      };
     };
   };
 }
