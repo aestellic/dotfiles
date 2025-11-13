@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   inputs.self.submodules = true;
 
