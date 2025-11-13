@@ -292,7 +292,7 @@
           tooltipsEnabled = true;
         };
         wallpaper = {
-          defaultWallpaper = "/home/sdasappan/.dotfiles/common/wallpapers/flower.png";
+          defaultWallpaper = "/home/sdasappan/.dotfiles/common/wallpapers/flowers.png";
           directory = "/home/sdasappan/.dotfiles/common/wallpapers";
           enableMultiMonitorDirectories = false;
           enabled = true;
