@@ -1,0 +1,3 @@
+[submodule "common/config/firefox/shimmer"]
+	path = common/config/firefox/shimmer
+	url = https://github.com/nuclearcodecat/shimmer
