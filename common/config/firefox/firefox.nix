@@ -109,7 +109,7 @@
           userContent = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userContent.css";
           extensions.settings = {
             "{3c078156-979c-498b-8990-85f7987dd929}".settings = {
-              settings = [
+              settings = {
                 nativeScrollbars = true;
                 nativeScrollbarsThin = true;
                 nativeScrollbarsLeft = false;
@@ -322,7 +322,7 @@
                 syncSaveKeybindings = false;
                 selectActiveTabFirst = true;
                 selectCyclic = false;
-              ];
+            };
 
               sidebar = {
                 nav = ["9iD_gaHrxpAp" "4ZrFYm0fG7Ah" "add_tp" "sp-0" "settings"];
