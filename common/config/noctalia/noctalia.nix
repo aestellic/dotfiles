@@ -95,8 +95,8 @@
               }
               {
                   customFont = "";
-                  formatHorizontal = "ddd MMM d | h =mm AP";
-                  formatVertical = "h =mmAP ddd MM/d";
+                  formatHorizontal = "ddd MMM d | h:mm AP";
+                  formatVertical = "h:mmAP ddd MM/d";
                   id = "Clock";
                   useCustomFont = false;
                   usePrimaryColor = true;
