@@ -41,6 +41,7 @@
           # Modules
           ./hosts/stellaPC/configuration.nix
           ./common/config/noctalia/noctalia.nix
+          ./common/config/firefox/firefox.nix
           inputs.home-manager.nixosModules.default
         ];
       };
@@ -60,6 +61,7 @@
           # Modules
           ./hosts/stellaLaptop/configuration.nix
           ./common/config/noctalia/noctalia.nix
+          ./common/config/firefox/firefox.nix
           inputs.home-manager.nixosModules.default
         ];
       };
