@@ -58,7 +58,7 @@
   programs.git = {
     enable = true;
     userName = "aestellic";
-    userEmail = "aestellic@protonmail.com"
+    userEmail = "aestellic@protonmail.com";
     extraConfig = {
       init.defaultBranch = "main";
     };
@@ -83,6 +83,18 @@
       ref =  "main";
       rev = "24f46e293955ac07416c522d1394eb793563f7d8";
     };
+
+    ".zshrc".source = ../../common/.zshrc;
+  };
+
+  xdg.configFile = {
+    "niri/config.kdl".source = ../../common/config/niri/niri_config.kdl;
+    "waybar/config.jsonc".source = ../../common/config/waybar/waybar_config.jsonc;
+    "vesktop/settings.json".source = ../../common/config/vesktop/settings.json;
+    "vesktop/settings/settings.json".source = ../../common/config/vesktop/settings/settings.json;
+    "vesktop/settings/quickCss.css".source = ../../common/config/vesktop/settings/quickCss.css;
+    "fastfetch/config.jsonc".source = ../../common/config/fastfetch/config.jsonc;
+    "hyfetch.json".source = ../../common/config/hyfetch/hyfetch.json;
   };
 
   # Home Manager can also manage your environment variables through
@@ -107,7 +119,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;    
-
-  xdg.configFile."niri/config.kdl".source = ../../common/niri_config.kdl;
-  xdg.configFile."waybar/config.jsonc".source = ../../common/waybar_config.jsonc;
 }

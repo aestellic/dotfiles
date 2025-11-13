@@ -7,6 +7,7 @@
     ];
 
   programs.noctalia-shell = {
+    enable = true;
     settings = {
       appLauncher = {
         backgroundOpacity = 1;
