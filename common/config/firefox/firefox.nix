@@ -1,7 +1,5 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 {
-  inputs.self.submodules = true;
-
   programs.firefox = {
     enable = true;
     languagePacks = [ "en-US" ];

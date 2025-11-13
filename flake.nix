@@ -22,6 +22,7 @@
 
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
 
+    self.submodules = true; # for shimmer
   };
 
   outputs = { self, nixpkgs, dolphin-overlay, ... }@inputs: {
