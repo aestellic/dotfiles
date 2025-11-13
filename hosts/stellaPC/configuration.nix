@@ -186,6 +186,7 @@
     usbutils
     whitesur-cursors
     inputs.noctalia.packages.${system}.default
+    networkmanagerapplet
   ];
 
   xdg.portal.enable = true;
