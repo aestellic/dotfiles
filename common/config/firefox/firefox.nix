@@ -105,8 +105,8 @@
           isDefault = true;     # can be omitted; true if profile ID is 0
           path = "profile_0";
           search.default = "ddg";
-          userChrome = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userChrome.css";
-          userContent = "/home/sdasappan/.dotfiles/common/firefox/shimmer/userContent.css";
+          userChrome = ./shimmer/userChrome.css;
+          userContent = ./shimmer/userContent.css;
           extensions.settings = {
             "{3c078156-979c-498b-8990-85f7987dd929}".settings = {
               settings = {
