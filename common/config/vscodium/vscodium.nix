@@ -6,7 +6,7 @@
     profiles.default = {
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Noctis Mocha";
-        "workbench.iconTheme" = "Catppuccin Noctis Icons";
+        "workbench.iconTheme" = "catppuccin noctis icons";
         "editor.bracketPairColorization.enabled" = true;
         "editor.guides.bracketPairs" = "active";
       };
