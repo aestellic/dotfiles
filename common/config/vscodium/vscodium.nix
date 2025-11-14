@@ -9,6 +9,7 @@
         "workbench.iconTheme" = "catppuccin noctis icons";
         "editor.bracketPairColorization.enabled" = true;
         "editor.guides.bracketPairs" = "active";
+        "catppuccin-noctis-icons.hidesExplorerArrows" = false;
       };
       extensions = with pkgs.vscode-marketplace; [
         alexdauenhauer.catppuccin-noctis
