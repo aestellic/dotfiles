@@ -80,6 +80,8 @@
       rev = "24f46e293955ac07416c522d1394eb793563f7d8";
     };
 
+    ".face".source = ../../common/.face;
+
     ".zshrc".source = ../../common/.zshrc;
 
     ".mozilla/firefox/profile_0/chrome".source = ../../common/config/firefox/shimmer;
