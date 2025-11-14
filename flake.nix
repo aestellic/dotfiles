@@ -22,10 +22,12 @@
 
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     self.submodules = true; # for shimmer
   };
 
-  outputs = { self, nixpkgs, dolphin-overlay, ... }@inputs: {
+  outputs = { self, nixpkgs, dolphin-overlay, nix-vscode-extensions, ... }@inputs: {
     nixosConfigurations = {
       stellaPC = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -36,13 +38,15 @@
             nixpkgs.config.allowUnfree = true;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+            nixpkgs.overlays = [ 
+              dolphin-overlay.overlays.default
+              nix-vscode-extensions.overlays.default
+            ];
           })
 
           # Modules
           ./hosts/stellaPC/configuration.nix
           ./common/config/noctalia/noctalia.nix
-          ./common/config/firefox/firefox.nix
           inputs.home-manager.nixosModules.default
         ];
       };
@@ -56,13 +60,15 @@
             nixpkgs.config.allowUnfree = true;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+            nixpkgs.overlays = [ 
+              dolphin-overlay.overlays.default
+              nix-vscode-extensions.overlays.default
+            ];
           })
 
           # Modules
           ./hosts/stellaLaptop/configuration.nix
           ./common/config/noctalia/noctalia.nix
-          ./common/config/firefox/firefox.nix
           inputs.home-manager.nixosModules.default
         ];
       };

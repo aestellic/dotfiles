@@ -15,6 +15,12 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  imports =
+  [
+    ../../common/config/vscodium/vscodium.nix
+    ../../common/config/firefox/firefox.nix
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -44,16 +50,7 @@
     pkgs.fastfetch
     pkgs.quodlibet
   ];
-
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
-    ];
-  };
-
+  
   programs.git = {
     enable = true;
     userName = "aestellic";
@@ -84,6 +81,8 @@
     };
 
     ".zshrc".source = ../../common/.zshrc;
+
+    ".mozilla/firefox/profile_0/chrome".source = ../../common/config/firefox/shimmer;
   };
 
   xdg.configFile = {
