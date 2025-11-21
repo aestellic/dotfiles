@@ -67,14 +67,7 @@
                   useFixedWidth = false;
               }
               {
-                  hideMode = "hidden";
-                  id = "MediaMini";
-                  maxWidth = 145;
-                  scrollingMode = "hover";
-                  showAlbumArt = false;
-                  showVisualizer = false;
-                  useFixedWidth = false;
-                  visualizerType = "linear";
+                  id = "AudioVisualizer";
               }
             ];
             right = [
@@ -105,7 +98,8 @@
                   customIconPath = "";
                   icon = "noctalia";
                   id = "ControlCenter";
-                  useDistroLogo = false;
+                  useDistroLogo = true;
+
               }
             ];
           };
@@ -143,7 +137,7 @@
                 id = "audio-card";
             }
             {
-                enabled = true;
+                enabled = false;
                 id = "weather-card";
             }
             {
@@ -207,6 +201,7 @@
           wallpaperChange = "";
         };
         "location" = {
+          name = "New York";
           analogClockInCalendar = false;
           firstDayOfWeek = -1;
           showCalendarEvents = true;
@@ -214,7 +209,7 @@
           showWeekNumberInCalendar = false;
           use12hourFormat = true;
           useFahrenheit = true;
-          weatherEnabled = true;
+          weatherEnabled = false;
         };
         network = {
           wifiEnabled = true;

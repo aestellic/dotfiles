@@ -23,7 +23,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -40,15 +40,21 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.vesktop
-    pkgs.signal-desktop-bin
-    pkgs.localsend
-    pkgs.yt-dlg
-    pkgs.gimp3-with-plugins
-    pkgs.python3
-    pkgs.hyfetch
-    pkgs.fastfetch
-    pkgs.quodlibet
+    vesktop
+    signal-desktop-bin
+    localsend
+    yt-dlg
+    gimp3-with-plugins
+    python3
+    hyfetch
+    fastfetch
+    quodlibet
+    androidenv.androidPkgs.platform-tools
+    brave
+    btop
+    undervolt
+    s-tui
+    stress
   ];
 
   programs.git = {

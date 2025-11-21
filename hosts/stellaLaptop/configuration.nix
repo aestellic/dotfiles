@@ -36,6 +36,8 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
+  hardware.enableAllFirmware = true;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -148,6 +150,7 @@
     whitesur-cursors
     inputs.noctalia.packages.${system}.default
     networkmanagerapplet
+    ddcutil
   ];
 
   xdg.portal.enable = true;

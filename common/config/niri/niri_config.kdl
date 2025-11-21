@@ -77,7 +77,7 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "DP-1" {
+output "DP-2" {
     // Uncomment this line to disable this output.
     // off
 
@@ -428,6 +428,7 @@ binds {
 
     XF86AudioPlay        allow-when-locked=true { spawn-sh "noctalia-shell ipc call media play"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "noctalia-shell ipc call media pause"; }
+    XF86AudioPause        allow-when-locked=true { spawn-sh "noctalia-shell ipc call media pause"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "noctalia-shell ipc call media previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "noctalia-shell ipc call media next"; }
 
