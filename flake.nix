@@ -9,15 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
@@ -27,7 +26,7 @@
     self.submodules = true; # for shimmer
   };
 
-  outputs = { self, nixpkgs, dolphin-overlay, nix-vscode-extensions, ... }@inputs: {
+  outputs = { self, nixpkgs, stylix, dolphin-overlay, nix-vscode-extensions, ... }@inputs: {
     nixosConfigurations = {
       stellaPC = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -48,6 +47,7 @@
           ./hosts/stellaPC/configuration.nix
           ./common/config/noctalia/noctalia.nix
           inputs.home-manager.nixosModules.default
+          stylix.nixosModules.stylix
         ];
       };
       
@@ -70,6 +70,7 @@
           ./hosts/stellaLaptop/configuration.nix
           ./common/config/noctalia/noctalia.nix
           inputs.home-manager.nixosModules.default
+          stylix.nixosModules.stylix
         ];
       };
     };

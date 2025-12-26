@@ -1,7 +1,8 @@
 autoload -U promptinit; promptinit
 prompt pure
 
-hyfetch
+clear && 
+fastfetch
 
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word

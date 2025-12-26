@@ -10,7 +10,7 @@ in
     userName = lib.mkOption {
       default = "sdasappan";
       description = ''
-       username
+       Stella
       '';
     };
   };
@@ -18,10 +18,10 @@ in
   config = lib.mkIf cfg.enable {
     users.users.${cfg.userName} = {
       isNormalUser = true;
-      description = "main user";
+      description = "Stella";
       initialPassword = "password";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "dialout" ];
       packages = with pkgs; [];    
     };
   };

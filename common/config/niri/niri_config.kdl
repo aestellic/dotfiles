@@ -306,6 +306,7 @@ spawn-at-startup "noctalia-shell"
 spawn-at-startup "signal-desktop"
 spawn-at-startup "mako"
 spawn-at-startup "sh" "-c" "python3 ~/niri_tweaks/niri_tile_to_n.py"
+spawn-at-startup "mpdris2-rs"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -399,19 +400,19 @@ binds {
     Mod+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty" "+new-window"; }
     Mod+Space hotkey-overlay-title="Run an Application" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Mod+A hotkey-overlay-title="Open Control Center" { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+I hotkey-overlay-title="Open Settings" { spawn-sh "noctalia-shell ipc call settings toggle"; }
-    Mod+V hotkey-overlay-title="Open Clipboard History" { spawn-sh "noctalia-shell ipc call clipboard"; }
+    Mod+V hotkey-overlay-title="Open Clipboard History" { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
     Mod+Backspace hotkey-overlay-title="Shutdown Dialog" { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     Mod+P hotkey-overlay-title="Toggle Idle Inhibitor" { spawn-sh "noctalia-shell ipc call idleInhibitor toggle"; }
-    Mod+W hotkey-overlay-title="Openn Firefox" cooldown-ms=500 { spawn "firefox"; }
-    Mod+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia-shell ipc call lockScreen lock"; }
+    Mod+W hotkey-overlay-title="Open Web Browser" cooldown-ms=500 { spawn "firefox"; }
+    Mod+L hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
     Mod+E hotkey-overlay-title="Open File Manager" cooldown-ms=500 { spawn "dolphin"; }    
-    Mod+X hotkey-overlay-title="Open Vesktop" { spawn "sh" "-c" "python3 ~/niri_tweaks/niri_spawnjump.py vesktop"; }
+    Mod+X hotkey-overlay-title="Open Vesktop" { spawn-sh "python3 ~/niri_tweaks/niri_spawnjump.py vesktop"; }
     Mod+C hotkey-overlay-title="Open VSCodium" { spawn "codium"; }        
-    Mod+R hotkey-overlay-title="Open QuodLibet" { spawn "quodlibet"; }        
+    Mod+R hotkey-overlay-title="Open Music Player" { spawn "feishin"; }        
 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -440,7 +441,7 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false cooldown-ms=250 { close-window; }
+    Mod+Q repeat=false cooldown-ms=150 { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }

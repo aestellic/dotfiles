@@ -28,7 +28,6 @@
             volumeStep = 5;
         };
         bar = {
-          backgroundOpacity = 0.75;
           density = "default";
           exclusive = true;
           floating = true;
@@ -114,11 +113,11 @@
         };
         colorSchemes = {
           darkMode = true;
-          generateTemplatesForPredefined = true;
+          generateTemplatesForPredefined = false;
           manualSunrise = "06 =30";
           manualSunset = "18 =30";
           matugenSchemeType = "scheme-fruit-salad";
-          predefinedScheme = "Catppuccin";
+          predefinedScheme = "Stylix";
           schedulingMode = "off";
           useWallpaperColors = false;
         };
@@ -224,7 +223,6 @@
           nightTemp = "5000";
         };
         notifications = {
-          backgroundOpacity = 1;
           criticalUrgencyDuration = 15;
           doNotDisturb = false;
           location = "bottom";
@@ -267,7 +265,7 @@
           enableUserTemplates = false;
           foot = false;
           fuzzel = false;
-          ghostty = true;
+          ghostty = false;
           gtk = true;
           kcolorscheme = true;
           kitty = false;
@@ -278,7 +276,6 @@
           wezterm = false;
         };
         ui = {
-          fontDefault = "Roboto";
           fontDefaultScale = 1;
           fontFixed = "DejaVu Sans Mono";
           fontFixedScale = 1;
@@ -302,22 +299,6 @@
           transitionEdgeSmoothness = 0.05;
           transitionType = "random";
         };
-      };
-      colors = {
-        mError = "#f38ba8";
-        mOnError = "#11111b";
-        mOnPrimary = "#11111b";
-        mOnSecondary = "#11111b";
-        mOnSurface = "#cdd6f4";
-        mOnSurfaceVariant = "#a3b4eb";
-        mOnTertiary = "#11111b";
-        mOutline = "#4c4f69";
-        mPrimary = "#cba6f7";
-        mSecondary = "#fab387";
-        mShadow = "#11111b";
-        mSurface = "#1e1e2e";
-        mSurfaceVariant = "#313244";
-        mTertiary = "#94e2d5";
       };
     };
   };

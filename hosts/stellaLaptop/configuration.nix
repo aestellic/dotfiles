@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../main-user.nix
+      ../../common/config/stylix/stylix.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -68,7 +69,7 @@
   };
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "stellaLaptop"; # Define your hostname.
@@ -116,34 +117,29 @@
   environment.systemPackages = with pkgs; [
     wget
     nano
-    zsh
-    ghostty
     kdePackages.dolphin
     #kdePackages.qtsvg # svg support
     kdePackages.kio-fuse #to mount remote filesystems via FUSE
     kdePackages.kio-extras #extra protocols support (sftp, fish and more)
+    kdePackages.ark # archive support
     dracula-icon-theme
     wineWowPackages.waylandFull
+    winetricks
+    mono
     pure-prompt
     cliphist
-    cava
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     xwayland-satellite
     easyeffects
     mako
     gamescope
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      accent = "green";
-      font  = "Noto Sans";
-      fontSize = "9";
-      loginBackground = true;
-    })
+    sddm-astronaut
     libreoffice-fresh
     hunspell
     hunspellDicts.en_US
     unzip
+    unrar
     mpv
     loupe
     usbutils
@@ -151,20 +147,41 @@
     inputs.noctalia.packages.${system}.default
     networkmanagerapplet
     ddcutil
+    pavucontrol
+    netbird-ui
+    gnome-font-viewer
   ];
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.config.common.default = [ "gtk" ];
-
-  services.displayManager.sddm = {
+   xdg.portal = {
     enable = true;
-    theme = "catppuccin-mocha-green";
-    package = pkgs.kdePackages.sddm;
-    wayland.enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common = {
+        default = ["gnome" "gtk"];
+        "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+        "org.freedesktop.impl.portal.Screenshot" = "gnome";
+        "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
+      };
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
   };
 
-    
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
+  services.netbird.enable = true;
+
+  programs.regreet = {
+    enable = true;
+    cageArgs = [ "-m last" ];
+  };
+  
   programs.nh = {
     enable = true;
     clean.enable = true;
@@ -191,6 +208,13 @@
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="3109", MODE="0666"
   '';
+
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
