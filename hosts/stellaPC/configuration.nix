@@ -95,6 +95,8 @@
   boot.loader.limine.maxGenerations = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   
+  services.displayManager.gdm.enable = true;
+
   networking.hostName = "stellaPC"; # Define your hostname.
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -165,7 +167,6 @@
     easyeffects
     mako
     gamescope
-    sddm-astronaut
     libreoffice-fresh
     hunspell
     hunspellDicts.en_US
@@ -207,11 +208,6 @@
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-
-  programs.regreet = {
-    enable = true;
-    cageArgs = [ "-m last" ];
-  };
 
   programs.nh = {
     enable = true;

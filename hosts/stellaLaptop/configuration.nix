@@ -73,6 +73,8 @@
   boot.loader.limine.maxGenerations = 10;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.displayManager.gdm.enable = true;
+
   networking.hostName = "stellaLaptop"; # Define your hostname.
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -135,7 +137,6 @@
     easyeffects
     mako
     gamescope
-    sddm-astronaut
     libreoffice-fresh
     hunspell
     hunspellDicts.en_US
