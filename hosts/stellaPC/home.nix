@@ -66,6 +66,8 @@
     prismlauncher
     feishin
     gnome-disk-utility
+    rockbox-utility
+    vlc
   ];
 
   programs = {
@@ -109,8 +111,12 @@
 
     ".zshrc".source = ../../common/.zshrc;
 
-    ".mozilla/firefox/profile_0/chrome".source = ../../common/config/librewolf/shimmer;
-
+    ".librewolf/profile_0/chrome".source = builtins.fetchGit {
+      url = "https://github.com/nuclearcodecat/shimmer";
+      ref =  "main";
+      rev = "50bde454a259968f88a48ff75b34591e9872b954";
+    };
+    
     ".local/share/kservices5/ServiceMenus/ghosttyhere.desktop" = { 
       text = ''
         [Desktop Entry]

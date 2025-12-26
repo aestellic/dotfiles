@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 {
-  programs.firefox = {
+  programs.librewolf = {
     enable = true;
     languagePacks = [ "en-US" ];
-    package = pkgs.librewolf;
 
     /* ---- POLICIES ---- */
     # Check about:policies#documentation for options.
@@ -62,6 +61,11 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
           installation_mode = "force_installed";
         };
+        # CanvasBlocker
+        "CanvasBlocker@kkapsner.de" = {
+          install_url = "https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
 
       /* ---- PREFERENCES ---- */
@@ -111,7 +115,10 @@
         "extensions.formautofill.creditCards.enabled" = false;
         "findbar.highlightAll" = true;
         "browser.ml.chat.menu" = false;
-        "browser.bookmarks.addedImportButton" = true;
+        "browser.bookmarks.addedImportButton" = false;
+        "middlemouse.paste" = false;
+        "clipboard.autocopy" = false;
+        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
       };
     };
     /* ---- PROFILES ---- */
@@ -461,9 +468,11 @@
       };
     };
   };
-  stylix.targets.firefox = {
+  
+  stylix.targets.librewolf = {
     profileNames = [ "profile_0" ];
     colorTheme.enable = true;
     colors.enable = true;
   };
+
 }

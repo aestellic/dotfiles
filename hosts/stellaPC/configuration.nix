@@ -92,6 +92,7 @@
 
   # Bootloader.
   boot.loader.limine.enable = true;
+  boot.loader.limine.maxGenerations = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   
   networking.hostName = "stellaPC"; # Define your hostname.
