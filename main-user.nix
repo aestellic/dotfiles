@@ -21,7 +21,7 @@ in
       description = "Stella";
       initialPassword = "password";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" "dialout" ];
+      extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" ];
       packages = with pkgs; [];    
     };
   };

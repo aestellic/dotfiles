@@ -61,11 +61,6 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
           installation_mode = "force_installed";
         };
-        # CanvasBlocker
-        "CanvasBlocker@kkapsner.de" = {
-          install_url = "https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/latest.xpi";
-          installation_mode = "force_installed";
-        };
       };
 
       /* ---- PREFERENCES ---- */

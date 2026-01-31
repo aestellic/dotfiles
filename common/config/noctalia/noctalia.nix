@@ -94,6 +94,9 @@
                   usePrimaryColor = true;
               }
               {
+                  id = "Brightness";
+              }
+              {
                   customIconPath = "";
                   icon = "noctalia";
                   id = "ControlCenter";

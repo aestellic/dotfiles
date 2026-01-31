@@ -67,7 +67,19 @@
     feishin
     gnome-disk-utility
     rockbox-utility
-    vlc
+    strawberry
+    cheese
+    ffmpeg_7-full
+    libva-utils
+    qalculate-gtk
+    ddcutil
+    telegram-desktop
+    rockbox-utility
+    whipper
+    davinci-resolve
+    wireguard-tools
+    protonvpn-gui
+    qbittorrent
   ];
 
   programs = {

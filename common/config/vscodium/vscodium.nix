@@ -5,8 +5,25 @@
     package = pkgs.vscodium;
     profiles.default = {
       userSettings = {
-        "editor.bracketPairColorization.enabled" = true;
-        "editor.guides.bracketPairs" = "active";
+          "chat.editor.fontFamily" = "DejaVu Sans Mono" ;
+          "chat.editor.fontSize" = 16.0 ;
+          "chat.fontFamily" = "DejaVu Sans" ;
+          "debug.console.fontFamily" = "DejaVu Sans Mono" ;
+          "debug.console.fontSize" = 16.0 ;
+          "editor.bracketPairColorization.enabled" = true ;
+          "editor.fontFamily" = "DejaVu Sans Mono" ;
+          "editor.fontSize" = 16.0 ;
+          "editor.guides.bracketPairs" = "active" ;
+          "editor.inlayHints.fontFamily" = "DejaVu Sans Mono" ;
+          "editor.inlineSuggest.fontFamily" = "DejaVu Sans Mono" ;
+          "editor.minimap.sectionHeaderFontSize" = 10.285714285714286 ;
+          "markdown.preview.fontFamily" = "DejaVu Sans" ;
+          "markdown.preview.fontSize" = 16.0 ;
+          "notebook.markup.fontFamily" = "DejaVu Sans" ;
+          "scm.inputFontFamily" = "DejaVu Sans Mono" ;
+          "scm.inputFontSize" = 14.857142857142858 ;
+          "screencastMode.fontSize" = 64.0 ;
+          "terminal.integrated.fontSize" = 16.0;
       };
       extensions = with pkgs.vscode-marketplace; [
         jnoortheen.nix-ide

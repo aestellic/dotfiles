@@ -53,6 +53,9 @@
     feishin
     gnome-disk-utility
     vlc
+    cheese
+    ffmpeg_7-full
+    qalculate-gtk
   ];
 
   programs = {

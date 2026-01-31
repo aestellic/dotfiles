@@ -72,6 +72,13 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      mesa.opencl # Enables Rusticl (OpenCL) support
+    ];
+  };
+
+  environment.variables = {
+    RUSTICL_ENABLE = "radeonsi";
   };
 
   services.xserver = {
@@ -88,7 +95,13 @@
     "amd_pstate=active"
     "amd_pstate.max_perf=0x7F"
   ];
-  #boot.blacklistedKernelModules = [ "btintel" ];
+
+  # for ddcutil
+  hardware.i2c.enable = true;
+  boot.kernelModules = ["i2c-dev"];
+  services.udev.extraRules = ''
+        KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+  '';
 
   # Bootloader.
   boot.loader.limine.enable = true;
@@ -109,6 +122,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Make proton vpn work
+  networking.firewall.checkReversePath = false;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -230,12 +246,6 @@
   services.udisks2.enable = true;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
-
-  services.udev.extraRules = ''
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="3109", MODE="0666"
-    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0bda", ATTR{idProduct}=="8922", TEST=="power/control", ATTR{power/control}="on"
-  '';
 
   services.printing.enable = true;
   services.avahi = {
